@@ -1,0 +1,51 @@
+@mixin flexbox($align: stretch, $justify: flex-start, $flex-direction:row, $wrap:nowrap) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $flex-direction;
+    flex-wrap: $wrap;
+  }
+  @mixin absolutecenter($direction:"left") {
+    position: absolute;
+    @if $direction == "both" {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    @if $direction == "left" {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    @if $direction == "top" {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  
+  @mixin respond($breakpoint) {
+      @if $breakpoint == small-phone {
+        @media (max-width:400px) {@content};//600px
+      }
+      @if $breakpoint == phone{
+          @media (max-width:567px) {@content};//600px
+      }
+      @if $breakpoint == tab-vertical{
+          @media (max-width: 756px){@content};  //900px
+      }
+      @if $breakpoint == tab-port{
+          @media (max-width: 900px){@content};  //900px
+      }
+      @if $breakpoint == tab-horizontal{
+          @media (max-width: 1023px){@content};  //900px
+      }
+      @if $breakpoint == tab-land{
+          @media (max-width: 1200px){@content}; //1200px
+      }
+      @if $breakpoint == big-desktop{
+          @media (max-width: 1800px){@content}; //1800px
+      }
+      @if $breakpoint == small-phone{
+          @media (max-width:350px) {@content}
+      }
+      
+  }

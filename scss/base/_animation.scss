@@ -1,0 +1,14 @@
+@keyframes fade-down{
+    0%{
+        opacity: 1;
+        top:1rem;
+    }
+    30%{
+        opacity: 1;
+        top:.5rem;
+    }
+    100%{
+        opacity: 0;
+        top: 95%;
+    }
+}

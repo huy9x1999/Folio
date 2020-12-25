@@ -1,0 +1,160 @@
+.header {
+  position: absolute;
+  width: 100%;
+  padding: 1rem 9rem;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  transition: position .5s ease-in-out;
+  @include respond (tab-vertical){
+    padding: 1rem 3rem;
+  }
+  @include respond (tab-vertical){
+    padding: 1rem 2rem 1rem 1rem;
+    img{
+      
+      margin-right: -5rem;
+    }
+  }
+  &::before{
+    transition: all .5s ease-in-out;
+    opacity: 0;
+  }
+  &.sticky{
+      position: fixed;
+      z-index: 9999;
+    &::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: 0;
+        background-color:#1e1e1e;
+        opacity: .7;
+        border-bottom: 1px solid $color-dark ;
+    }
+  }
+  
+  @include flexbox(stretch, space-between);
+  &__toggle {
+    display: none;
+    visibility: hidden;
+    background-image:url('../image/menu.png') ;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    margin-top: 1rem;
+    cursor: pointer;
+    width: 4rem;
+    height: 3rem;
+    @include respond(tab-horizontal){
+      display: block;
+      visibility: visible;
+    }
+  }
+  &__logo {
+      position: relative;
+      z-index: 99;
+    .logo__text {
+      position: relative;
+      color: #fff;
+      margin: 0;
+      font-size: 5rem;
+      font-weight: 900;
+      line-height: 1.4em;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 0.8rem;
+        background-color: $color-light;
+      }
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+  &__menu {
+    flex-grow: 1;
+    @include flexbox(center, flex-end);
+    list-style: none;
+    @include respond(tab-horizontal){
+      position: fixed;
+      left: 0;
+      top: 0;
+      display: block;
+      width: 70%;
+      height: 100%;
+      background-color: #1e1e1e;
+      z-index: 999999;
+      padding-left:10rem ;
+      padding-right: 10rem;
+      padding-top: 10rem;
+      transform: translateX(-100%);
+      &.open{
+        transform: translateX(0);
+        transition: .5s ease-in-out;
+      }
+    }
+    @include respond(tab-vertical){
+      padding-left:5rem ;
+      padding-right: 5rem;
+      padding-top: 5rem;
+    }
+    li {
+      text-align: center;
+      padding: 1.6rem 1.7rem;
+      line-height: 1;
+      position: relative;
+      @include respond(tab-horizontal){
+        text-align: left;
+      }
+      @include respond(tab-land){
+        padding: 1.5rem 1rem;
+      }
+      a {
+        text-decoration: none;
+        background: transparent;
+        color: #fff;
+        display: block;
+        font-size: 1.5rem;
+        padding: 0 0 .8rem;
+        position: relative;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: .17rem;
+        transition: color .2s ease-in-out;
+        &::before{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: .1rem;
+            background-color: $color-primary;
+            z-index: 98;
+            transform: scale(0);
+            transform-origin: right;
+            transition: transform .5s ease-in-out;
+            @include respond(tab-horizontal){
+              transform: scale(1);
+            }
+        }
+      }
+      &:hover {
+        a{
+            color: $color-primary;
+            transition-delay: .2s;
+            &::before{
+                transform: scale(1);
+                transform-origin: left;
+            }
+        }
+      }
+    }
+  }
+}

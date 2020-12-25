@@ -1,0 +1,33 @@
+.frm-contact{
+    label{
+        display: block;
+        line-height: 2.1rem;
+        width: 100%;
+        color:$color-dark;
+        padding: .3rem 0;
+        margin: 0px 0px .4rem;
+        box-sizing: border-box;
+        height: 3rem;
+        letter-spacing: .1rem;
+        font-weight: normal;
+    }
+    input,textarea{
+        border: none;
+        background-color: #fafafa;
+        outline: none;
+        padding: .5rem;
+        margin-top: .4rem;
+        margin-bottom: 1.5rem;
+        display: table-cell;
+        vertical-align: middle;
+        min-height: 4.5rem;
+        width: 100%;
+        resize: none;
+        &:visited,&:active,&:focus{
+            border-bottom: 1px solid $color-primary;
+        }
+    }
+    textarea{
+        min-height:13rem ;
+    }
+}

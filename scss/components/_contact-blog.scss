@@ -1,0 +1,34 @@
+.contact-blog {
+  &__item {
+      position: relative;
+    text-align: center;
+    * {
+      display: block;
+      color: $color-light;
+    }
+    i {
+      font-size: 3rem;
+      margin-right: 2rem;
+      padding: 1.5rem;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      color: $color-grey;
+      width: 100%;
+      box-sizing: border-box;
+      text-align: center;
+    }
+  }
+  &__title{
+    width: 100%;
+    text-transform: none;
+    font-weight: 700;
+    font-size: 1.6rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    vertical-align: middle;
+  }
+  &__phone{
+      line-height: 4.5rem;
+  }
+}

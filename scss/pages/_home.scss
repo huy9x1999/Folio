@@ -1,0 +1,330 @@
+.section--banner {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: url("../image/head-back.jpg") no-repeat center bottom;
+  background-size: cover;
+  background-attachment: fixed;
+  text-align: center;
+  @include respond(tab-land){
+    height: 60rem;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #000;
+    opacity: 0.5;
+    z-index: 1;
+  }
+  .svg {
+    position: absolute;
+    width: 100%;
+    bottom: -0.6rem;
+    z-index: 2;
+    svg,
+    polygon {
+      fill: #fff;
+    }
+  }
+  .pointer {
+    position: relative;
+    display: inline-block;
+    width: 3rem;
+    height: 5rem;
+    border: 0.2rem solid $color-light;
+    border-radius: 2rem;
+    bottom: -10rem;
+    @include respond(tab-vertical){
+      bottom: -5rem;
+    }
+    &::before {
+      position: absolute;
+      content: "";
+      width: 0.4rem;
+      height: 0.4rem;
+      background-color: $color-light;
+      left: 50%;
+      top: 1rem;
+      transform: translateX(-50%);
+      animation: fade-down 2s infinite ease-in-out;
+      border-radius: 50%;
+    }
+  }
+}
+.section--about {
+  @include flexbox(stretch, center);
+  @include respond(tab-port){
+    display: block;
+  }
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 6rem 5rem 2rem 5rem;
+  &__left {
+    min-width: 35rem;
+    @include respond(tab-port){
+      min-width: auto;
+      max-width: 50rem;
+      margin: 0 auto;
+      img{
+        margin: 0 auto;
+      }
+    }
+  }
+  &__right {
+    flex-grow: 1;
+    padding-left: 7rem;
+    @include respond(tab-port){
+      padding-left: 0;
+      max-width: 50rem;
+      margin: 0 auto;
+      margin-top: 2rem;
+    }
+    .profile-heading {
+      color: $color-secondary;
+      padding-bottom: 25px;
+      margin-bottom: 25px;
+      border-bottom: 1px solid #dedede;
+    }
+    .profile-detail {
+      color: $color-grey;
+    }
+  }
+}
+.section-primary {
+  padding: 3rem 2rem;
+  max-width: 117rem;
+  margin: 0 auto;
+}
+.section--skill {
+  .row {
+    @include flexbox(stretch, center);
+    @include respond(tab-port){
+      flex-direction: column;
+      max-width: 50rem;
+      margin: 0 auto;
+    }
+    &__item {
+      padding: 1.5rem;
+      @include respond(tab-port){
+        width: 100%;
+      }
+      &:not(:last-child) {
+        padding-left: 0;
+        padding-right: 4rem;
+        @include respond(tab-port){
+         padding: 0;
+        }
+      }
+      &:not(:first-child) {
+        padding-right: 0;
+        padding-left: 4rem;
+        @include respond(tab-port){
+          padding: 0;
+        }
+      }
+    }
+  }
+  .skill {
+    li {
+      margin-bottom: 2rem;
+    }
+    &__text {
+      font-size: 1.4rem;
+      text-transform: uppercase;
+    }
+    &__percent {
+      height: 1rem;
+      width: 100%;
+      background-color: rgba($color: $color-grey, $alpha: 0.7);
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        left: 0;
+        top: 0;
+        opacity: 0.8;
+      }
+    }
+    .html__percent {
+      &::before {
+        width: 88%;
+        background-color: red;
+      }
+    }
+    .css__percent {
+      &::before {
+        width: 80%;
+        background-color: yellow;
+      }
+    }
+    .scss__percent {
+      &::before {
+        width: 40%;
+        background-color: yellowgreen;
+      }
+    }
+    .js__percent {
+      &::before {
+        width: 30%;
+        background-color: blueviolet;
+      }
+    }
+    .github__percent {
+      &::before {
+        width: 30%;
+        background-color: lightskyblue;
+      }
+    }
+  }
+  .info {
+    padding-top: 3rem;
+    li {
+      position: relative;
+      padding-left: 15rem;
+      @include respond(phone){
+        padding-left: 8rem;
+      }
+      margin-bottom: 1.5rem;
+      strong {
+        font-weight: 700;
+        font-size: 1.4rem;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        height: 100%;
+        transform: translateY(-50%);
+      }
+      span {
+        color: $color-grey;
+      }
+    }
+  }
+}
+// .section-primary padding  3rem 0
+
+.section--offer {
+    .row{
+        @include flexbox(stretch,center,row,wrap);
+        &__item{
+          @include respond(tab-horizontal){
+            width: 50%;
+          }
+          @include respond(phone){
+            width: 100%;
+          }
+            padding: 1rem;
+        }
+    }
+    &__item{
+        border-radius: .5rem;
+        box-shadow: 5px 5px 45px -20px rgba(0,0,0,0.7);
+        cursor: pointer;
+        padding: 3rem 3rem 2rem;
+        transition:margin .5s ease-in-out;
+        &:hover{
+            margin-top: -1rem;      
+        }
+        p{
+            font-size: 1.4rem;
+            color: rgba($color: $color-dark, $alpha: .8);
+        }
+    }
+}
+.section--our-portfolio{
+  .row{
+    @include flexbox(stretch,center,row,wrap);
+    margin: 0 -.75rem;
+    &__item{
+      @include respond(tab-horizontal){
+        width: 50%;
+        margin-bottom: 2rem;
+      }
+      @include respond(phone){
+        width: 100%;
+      }
+      padding:0 .75rem;
+      margin-bottom:1.5rem ;
+    }
+  }
+}
+.section--testimonial{
+  background-image: url('../image/city-1150026_960_720.jpg');
+  position: relative;
+  &::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba($color: $color-dark, $alpha: .6);
+  }
+}
+.section--featured{
+  .row{
+    @include flexbox(baseline,center,row,wrap);
+    margin: 0 -.5rem;
+    &--flex-start{
+      margin: 0;
+      justify-content: flex-start;
+    }
+    &__item{
+      @include respond(tab-horizontal){
+        width: 50%;
+        margin-bottom: 2rem;
+      }
+      @include respond(phone){
+        width: 100%;
+      }
+      padding:0 .5rem;
+      margin-bottom:1rem ;
+    }
+  }
+}
+.section--contact{
+  .row{
+    margin: 0 auto;
+    padding: 5rem 0;
+    max-width: 117rem;
+    @include flexbox(stretch,center);
+    @include respond(tab-land){
+      @include flexbox(stretch,center,row,wrap);
+    }
+  }
+  .wrap-contact{
+    padding: 4rem 4rem .5rem;
+    margin: 0 auto;
+    display: block;
+    max-width: 80rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 4rem 4rem .5rem;
+  }
+  .contact-blog{
+    background-image: url('../image/nature-3616194_1920.jpg');
+    background-position: center 85%;
+    background-repeat: no-repeat;
+    position: relative;
+    &::before{
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color: $color-dark, $alpha: .7);
+    }
+    .row{
+      &__item{
+        @include respond(tab-vertical){
+          width: 100%;
+        }
+      }
+    }
+  }
+}

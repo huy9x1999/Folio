@@ -1,0 +1,33 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  scroll-behavior: smooth;
+}
+img {
+  max-width: 100%;
+}
+html {
+  font-size: 10px;
+  @include respond(small-phone){
+    font-size: 8px;
+  }
+}
+body {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+ul{
+  list-style: none;
+}
+img,.img{
+  display: block;
+  max-width:100%;
+  object-fit: cover;
+}
+::selection{
+  background-color:transparent ;
+  text-shadow: $color-dark 0 0 .2rem;
+}

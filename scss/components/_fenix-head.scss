@@ -1,0 +1,31 @@
+.fenix-head {
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  width: 70%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  color: $color-light;
+  &__icon {
+    list-style: none;
+
+    li {
+      display: inline-block;
+      margin-top: 0.3rem;
+      margin-right: 0.25rem;
+      margin-left: 0.25rem;
+      a {
+        display: block;
+        width: 3rem;
+        height: 3rem;
+        line-height: 3rem;
+        font-size: 1.5rem;
+        color: #000;
+        background: #fff;
+        mix-blend-mode: screen;
+        text-decoration: none;
+        border-radius: 0.3rem;
+      }
+    }
+  }
+}
